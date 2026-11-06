@@ -1,0 +1,14 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for pre-configure
+- name: Install Nginx
+  apt:
+    name: "{{ package_name }}"
+    state: present
+    update_cache: true
+
+- name: Start and Enable nginx service
+  service:
+    name: "{{ service_name }}"
+    state: started
+    enabled: true 
